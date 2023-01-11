@@ -1,6 +1,11 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
+  // jQueryが機能するか、テスト用
+  $(".js-test").click(function () {
+    $(this).css("background-color", "blue");
+  });
+
   var topBtn = $('.pagetop');
   topBtn.hide();
 
