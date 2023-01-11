@@ -40,6 +40,7 @@ const destPath = {
 // WordPress反映用
 const themeName = "WordPressTheme"; // WordPress theme name
 const destWpPath = {
+    // all: `./${themeName}/assets//**/*`,
     css: `./${themeName}/assets/css/`,
     js: `./${themeName}/assets/js/`,
     img: `./${themeName}/assets/images/`,
@@ -129,6 +130,7 @@ const jsBabel = () => {
             presets: ['@babel/preset-env']
         }))
         .pipe(dest(destPath.js))
+        .pipe(dest(destWpPath.js))
         .pipe(uglify())
         .pipe(
             rename(
