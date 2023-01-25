@@ -10,5 +10,5 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="">
-    <p class="test js-test">header.php</p>
+    <p class="c-test js-test">header.php</p>
   </header>
