@@ -27,15 +27,16 @@ const srcPath = {
     css: './src/sass/**/*.scss',
     js: './src/js/**/*',
     img: './src/images/**/*',
+    php: './**/*.php',
 }
 
 // html反映用
-const destPath = {
-    all: './assets/**/*',
-    css: './assets/css/',
-    js: './assets/js/',
-    img: './assets/images/',
-}
+// const destPath = {
+//     all: './assets/**/*',
+//     css: './assets/css/',
+//     js: './assets/js/',
+//     img: './assets/images/',
+// }
 
 // WordPress反映用
 const themeName = "WordPressTheme"; // WordPress theme name
@@ -76,7 +77,7 @@ const cssSass = () => {
         ]))
         .pipe(mmq()) // media query mapper
         .pipe(sourcemaps.write('./'))
-        .pipe(dest(destPath.css))
+        // .pipe(dest(destPath.css))
         .pipe(dest(destWpPath.css))
         .pipe(notify({
             message: 'Sassをコンパイルしました！',
@@ -112,7 +113,7 @@ const imgImagemin = () => {
                 }
             )
         )
-        .pipe(dest(destPath.img))
+        // .pipe(dest(destPath.img))
         .pipe(dest(destWpPath.img))
 }
 
@@ -129,7 +130,7 @@ const jsBabel = () => {
         .pipe(babel({
             presets: ['@babel/preset-env']
         }))
-        .pipe(dest(destPath.js))
+        // .pipe(dest(destPath.js))
         .pipe(dest(destWpPath.js))
         .pipe(uglify())
         .pipe(
@@ -137,14 +138,15 @@ const jsBabel = () => {
                 { extname: '.min.js' }
             )
         )
-        .pipe(dest(destPath.js))
+        // .pipe(dest(destPath.js))
         .pipe(dest(destWpPath.js))
 }
 
 // ブラウザーシンク
 const browserSyncOption = {
     notify: false,
-    server: "./"
+    // server: "./"
+    proxy: "developmentenvironment.local"
 }
 const browserSyncFunc = () => {
     browserSync.init(browserSyncOption);
@@ -159,5 +161,6 @@ const watchFiles = () => {
     watch(srcPath.css, series(cssSass, browserSyncReload))
     watch(srcPath.js, series(jsBabel, browserSyncReload))
     watch(srcPath.img, series(imgImagemin, browserSyncReload))
+    watch(srcPath.php, series(imgImagemin, browserSyncReload))
 }
 exports.default = series(series(cssSass, jsBabel, imgImagemin), parallel(watchFiles, browserSyncFunc));
