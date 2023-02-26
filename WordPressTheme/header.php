@@ -1,3 +1,7 @@
+<?php
+$home = esc_url(home_url('/'));
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -9,6 +13,8 @@
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <header class="">
-    <p class="c-test js-test">header.php</p>
+  <header class="l-header p-header">
+    <div class="p-header__inner l-inner">
+      <p class="c-test js-test">header.php</p>
+    </div>
   </header>
