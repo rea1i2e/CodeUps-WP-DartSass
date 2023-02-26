@@ -1,7 +1,9 @@
-# CodeUps-WP-DartSass 
-DartSass対応WordPress構築環境を含むgulpファイル
+# CodeUps-WP-DartSassのfork
+DartSass対応WordPress構築環境を含むgulpファイルをforkして作成
 
 ## 環境
+- CodeUps-WP-DartSassをカスタマイズした環境
+- DartSass対応WordPress構築環境を含むgulpファイル
 - Gulpが使える環境が前提（4系）
 - Nodeはバージョン14以降
 
@@ -22,9 +24,6 @@ DartSass対応WordPress構築環境を含むgulpファイル
 - rem記述を前提としています。
 - ルートフォントをvwで設定していることからPCサイズのレイアウトをタブレットで表示させることが出来ます（remで書いた場合のみ）。
 
-## 静的ファイルをアップするとき
-- htmlファイルとassetsフォルダをアップロードしてください
 
 ## WordPress
 - WordPressThemeをアップロードすればテーマとして反映されます
-# CodeUps-WP-DartSass
