@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
-<p class="js-test">front-page.php</p>
+<div class="l-inner">
+  <p class="js-test">front-page.php</p>
+</div>
 
 <?php get_footer(); ?>

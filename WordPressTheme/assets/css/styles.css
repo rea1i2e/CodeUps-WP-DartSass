@@ -1,9 +1,7 @@
+/* フォントファミリー */
+
 body {
 	font-family: "";
-}
-
-.u-desktop {
-	display: none;
 }
 
 /* リキッドレイアウト対応 */
@@ -151,28 +149,24 @@ select::-ms-expand {
 }
 
 .c-test {
-	color: brown;
+	background-color: pink;
 	font-size: 20px;
 	font-size: 1.25rem;
 }
 
 .l-inner {
+	background-color: yellow;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 1102.5px;
 	padding-left: 20px;
+	padding-left: 1.25rem;
 	padding-right: 20px;
+	padding-right: 1.25rem;
 	width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-
-.u-desktop {
-	display: block;
-}
-
-.u-mobile {
-	display: none;
-}
 
 html {
 	font-size: 1.4545454545vw;
@@ -187,9 +181,9 @@ a:hover {
 }
 
 .l-inner {
-	max-width: 1150px;
-	padding-left: 25px;
-	padding-right: 25px;
+	max-width: 1103.125px;
+	padding-left: 1.5625rem;
+	padding-right: 1.5625rem;
 }
 
 }

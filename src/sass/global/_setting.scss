@@ -1,20 +1,17 @@
 @use "sass:math";
 
 // インナー幅設定
-$inner-pc: 1100px;
 $inner-sp: 540px;
+$inner-pc: 1100px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
-$padding-pc: 25px;
-$padding-sp: 20px;
+$padding-sp: math.div(20, 16) * 1rem;
+$padding-pc: math.div(25, 16) * 1rem;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 
-////////////////////
-// フォント設定
-////////////////////
-
+/* フォントファミリー */
 $base-font-family: "";
 $second-font-family: "";
 // ※検証ツールでしっかり反映されているか確認する
@@ -58,34 +55,10 @@ $mediaquerys: (
   xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
 );
 
-// @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
+// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+
 @mixin mq($mediaquery: md) {
   @media #{map-get($mediaquerys, $mediaquery)} {
     @content;
-  }
-}
-
-// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
-@function rem($pixels) {
-  @return math.div($pixels, 16) * 1rem;
-}
-
-
-////////////////////
-// 非表示設定
-////////////////////
-
-//768px以上を表示
-.u-desktop {
-  display: none;
-  @include mq("md") {
-    display: block;
-  }
-}
-
-//モバイルのみ表示
-.u-mobile {
-  @include mq("md") {
-    display: none;
   }
 }
