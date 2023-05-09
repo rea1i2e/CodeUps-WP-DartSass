@@ -27,3 +27,8 @@ DartSass対応WordPress構築環境を含むgulpファイルをforkして作成
 
 ## WordPress
 - WordPressThemeをアップロードすればテーマとして反映されます
+
+### 修正箇所
+## l-inner
+- 左右のpaddingの単位をremに
+- リキッドレイアウトのブレイクポイントをインナー幅＋paddingのサイズに

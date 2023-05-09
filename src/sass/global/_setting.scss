@@ -1,13 +1,13 @@
 @use "sass:math";
 
 // インナー幅設定
-$inner-sp: 540px;
-$inner-pc: 1100px;
+$inner-sp: 540;
+$inner-pc: 1120; // 左右160px
 // ※キャンパス幅ではなくインナーの幅を指す
 
-// 余白
-$padding-sp: math.div(20, 16) * 1rem;
-$padding-pc: math.div(25, 16) * 1rem;
+// 余白（rem）
+$padding-sp: 25;
+$padding-pc: 25;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 
