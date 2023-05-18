@@ -161,6 +161,6 @@ const watchFiles = () => {
     watch(srcPath.css, series(cssSass, browserSyncReload))
     watch(srcPath.js, series(jsBabel, browserSyncReload))
     watch(srcPath.img, series(imgImagemin, browserSyncReload))
-    watch(srcPath.php, series(imgImagemin, browserSyncReload))
+    watch(srcPath.php, series(browserSyncReload))
 }
 exports.default = series(series(cssSass, jsBabel, imgImagemin), parallel(watchFiles, browserSyncFunc));
