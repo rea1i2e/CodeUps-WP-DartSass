@@ -2,10 +2,10 @@
 @use 'sass:math';
 
 img.u-no-image {
-  padding: rem(8);
+  padding: myrem(8);
   background-color: #ECECEC;
   object-fit: contain;
   @include mq() {
-    padding: rem(16);
+    padding: myrem(16);
   }
 }

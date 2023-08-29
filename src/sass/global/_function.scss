@@ -14,7 +14,7 @@
 	@return math.div($size, $window_width) * 100vw;
 }
 
-@function rem($pixels) {
+@function myrem($pixels) {
   @return math.div($pixels, 16) * 1rem;
 }
 

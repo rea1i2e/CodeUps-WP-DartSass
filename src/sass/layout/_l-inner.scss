@@ -4,12 +4,12 @@
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  max-width: rem($inner-sp + $padding-sp * 2);
-  padding-right: rem($padding-sp);
-  padding-left: rem($padding-sp);
+  max-width: myrem($inner-sp + $padding-sp * 2);
+  padding-right: myrem($padding-sp);
+  padding-left: myrem($padding-sp);
   @include mq("md") {
-    max-width: rem($inner-pc + $padding-pc * 2);
-    padding-right: rem($padding-pc);
-    padding-left: rem($padding-pc);
+    max-width: myrem($inner-pc + $padding-pc * 2);
+    padding-right: myrem($padding-pc);
+    padding-left: myrem($padding-pc);
   }
 }
